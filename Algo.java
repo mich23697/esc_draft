@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-
+//Create a instance of this class and call function getAllocation()
 public class spaceAllocation {
     int [][] spacedata;
     int [][] projectdata;
