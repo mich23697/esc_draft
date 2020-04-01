@@ -1,0 +1,44 @@
+#box-container{ 
+  position: relative;
+  width: 1920px;
+  height: 1080px; 
+  border: 2px solid black; 
+}
+
+.img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.button {
+  background-color: #f44336; /* Red */
+  border: none;
+  color: white;
+  height: 64px;
+  width: 64px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+.button1 {
+  background-color: #f44336; /* Red */
+  border: none;
+  color: white;
+  height: 64px;
+  width: 64px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  float: left;
+}
+
+.button1:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.button:hover {
+  background-color: #636362;
+}
