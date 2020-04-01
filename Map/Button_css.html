@@ -5,24 +5,31 @@
 </head>
 <body>
   <div id="box-container">
-    <button class = "button" id = "L1" onclick = "change(this.id)"  style ="left:1200px; top:300px; position: absolute;">L1</button>
-    <button class = "button" id = "L2" onclick = "change(this.id)" style ="left:700px; top:700px; position: absolute;">L2</button>
+    <button class = "button" id = "L1" onclick = "change(this.id)"  style ="left:1200px; top:300px; position: absolute; background:red;">L1</button>
+    <button class = "button" id = "L2" onclick = "change(this.id)" style ="left:700px; top:700px; position: absolute; background:red;">L2</button>
     <div style ="left:300px; top:400px; position: absolute; transform: rotate(20deg);">
-     <button class="button1" id = "L3" onclick = "change(this.id)">L3</button>
-     <button class="button1" id = "L4" onclick = "change(this.id)">L4</button>
-     <button class="button1" id = "L5" onclick = "change(this.id)">L5</button>
-     <button class="button1" id = "L6" onclick = "change(this.id)">L6</button>
+     <button class="button1" id = "L3" onclick = "change(this.id)" style ="background:red;">L3</button>
+     <button class="button1" id = "L4" onclick = "change(this.id)" style ="background:red;">L4</button>
+     <button class="button1" id = "L5" onclick = "change(this.id)" style ="background:red;">L5</button>
+     <button class="button1" id = "L6" onclick = "change(this.id)" style ="background:red;">L6</button>
     </div>
 
     <img src="C:\Users\simon\Desktop\allocation_map.png" class="image" />
   </div>
+
+  <script type="text/javascript">
+  function change(id)
+  {
+    if (document.getElementById(id).style.background == 'red') {
+            document.getElementById(id).style.background = 'green'; 
+            document.getElementById(id).innerHTML = id + "<br/>1234" ; 
+        }
+        else {
+            document.getElementById(id).style.background = 'red';
+            document.getElementById(id).innerHTML = id
+        }
+  }
+</script> 
 </body>
 </html>
 
-<script type="text/javascript">
-function change(id)
-{
-  document.getElementById(id).innerHTML = id + "<br/>1234" ;
-
-}
-</script> 
