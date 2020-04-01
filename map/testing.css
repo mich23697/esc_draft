@@ -5,39 +5,37 @@
   border: 2px solid black; 
 }
 
-img {
+.img {
     max-width: 100%;
     max-height: 100%;
 }
-
 
 .button {
   background-color: #f44336; /* Red */
   border: none;
   color: white;
-  padding: 32px 32px;
-  text-align: center;
+  height: 64px;
+  width: 64px;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+
   cursor: pointer;
 }
-.btn-group .button1 {
+.button1 {
   background-color: #f44336; /* Red */
-  border: 1px solid black;
+  border: none;
   color: white;
-  padding: 32px 32px;
-  text-align: center;
+  height: 64px;
+  width: 64px;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
   float: left;
-  position: absolute
 }
 
-.btn-group .button:not(:last-child) {
+.button1:not(:last-child) {
   border-right: none; /* Prevent double borders */
 }
 
