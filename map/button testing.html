@@ -5,23 +5,60 @@
 </head>
 <body>
   <div id="box-container">
-    <button class = "button" id = "L1" onclick = "change(this.id)"  style ="left:1200px; top:300px; position: absolute;">L1</button>
-    <button class = "button" id = "L2" onclick = "change(this.id)" style ="left:700px; top:700px; position: absolute;">L2</button>
-    <div style ="left:300px; top:400px; position: absolute; transform: rotate(20deg);">
-     <button class="button1" id = "L3" onclick = "change(this.id)">L3</button>
-     <button class="button1" id = "L4" onclick = "change(this.id)">L4</button>
-     <button class="button1" id = "L5" onclick = "change(this.id)">L5</button>
-     <button class="button1" id = "L6" onclick = "change(this.id)">L6</button>
+    <button class = "button" id = "1" onclick = "onButtonClick(this.id)"  style ="left:697px; top:119px; height: 54px; width: 54px; position: absolute; background:red;">L1</button>
+    <div class = "hide" id="textInput1" style ="left:697px; top:109px; position: absolute;">
+      <input type="text" id="tb1" value="..."style ="width: 54px;" />
+      <button onclick="change(this.id)" id="b1">change</button>
     </div>
-
-    <img class = "img" src = "allocation_map.png">
+    <button class = "button" id = "2" onclick = "change(this.id)" style ="left:1234.5px; top: 639px; height: 107px; width: 107px; position: absolute;transform: rotate(-39deg); background:red;">L2</button>
+    <button class = "button" id = "3" onclick = "change(this.id)" style ="left:1336px; top: 578px; height: 63px; width: 63px; position: absolute;transform: rotate(-39deg); background:red;">L3</button>
+    <button class = "button" id = "4" onclick = "change(this.id)"  style ="left:419px; top:413px; height: 66px; width: 75px; position: absolute; background:red;">L4</button>
+    <button class = "button" id = "5" onclick = "change(this.id)"  style ="left:440px; top:359px; height: 54px; width: 54px; position: absolute; background:red;">L5</button>
+    <button class = "button" id = "6" onclick = "change(this.id)"  style ="left:519px; top:254px; height: 108px; width: 108px; position: absolute; background:red;">L6</button>
+    <button class = "button" id = "7" onclick = "change(this.id)"  style ="left:640.5px; top:320.5px; height: 54px; width: 54px; position: absolute; background:red;">L7</button>
+    <button class = "button" id = "8" onclick = "change(this.id)"  style ="left:705px; top:380px; height: 132px; width: 75px; position: absolute; background:red;">L8</button>
+    <button class = "button" id = "9" onclick = "change(this.id)"  style ="left:539px; top:385px; height: 85px; width: 85px; position: absolute; background:red;">L9</button>
+    <button class = "button" id = "10" onclick = "change(this.id)"  style ="left:777.5px; top:254.5px; height: 66px; width: 66px; position: absolute; background:red;">L10</button>
+    <button class = "button" id = "11" onclick = "change(this.id)"  style ="left:898px; top:314px; height: 63.5px; width: 70.5px; position: absolute; background:red;">L11</button>
+    <button class = "button" id = "12" onclick = "change(this.id)"  style ="left:898px; top:380px; height: 50px; width: 72px; position: absolute; background:red;">L12</button>
+    <button class = "button" id = "13" onclick = "change(this.id)"  style ="left:970.5px; top:358.5px; height: 69.5px; width: 70.5px; position: absolute; background:red;">L13</button>
+    <button class = "button" id = "14" onclick = "change(this.id)"  style ="left:1041.5px; top:332.5px; height: 54.5px; width: 60.5px; position: absolute; background:red;">L14</button>
+    <button class = "button" id = "15" onclick = "change(this.id)"  style ="left:1041.5px; top:389.5px; height: 40.5px; width: 70.5px; position: absolute; background:red;">L15</button>
+    <button class = "button" id = "16" onclick = "change(this.id)"  style ="left:1214.5px; top:459.5px; height: 60.5px; width: 60.5px; position: absolute; background:red;">L16</button>
+    <button class = "button" id = "17" onclick = "change(this.id)"  style ="left:1214.5px; top:396.5px; height: 60.5px; width: 60.5px; position: absolute; background:red;">L17</button>
+    <button class = "button" id = "18" onclick = "change(this.id)"  style ="left:1210.5px; top:302.5px; height: 60.5px; width: 60.5px; position: absolute; background:red;">L18</button>
+    <button class = "button" id = "19" onclick = "change(this.id)"  style ="left:1290.5px; top:307.5px; height: 51.5px; width: 49.5px; position: absolute; background:red;">L19</button>
+    <button class = "button" id = "20" onclick = "change(this.id)"  style ="left:1343.5px; top:274.5px; height: 51.5px; width: 49.5px; position: absolute; background:red;">L20</button>
+    <button class = "button" id = "21" onclick = "change(this.id)"  style ="left:1396.5px; top:280.5px; height: 40.5px; width: 40.5px; position: absolute; background:red;">L21</button>
+    <button class = "button" id = "22" onclick = "change(this.id)"  style ="left:1375.5px; top:377.5px; height: 80.5px; width: 80.5px; position: absolute; background:red;">L22</button>
+    <button class = "button" id = "23" onclick = "change(this.id)" style ="left:549px; top: 554px; height: 40.6px; width: 40.6px; position: absolute;transform: rotate(40.46deg); background:red;">L23</button>
+    <button class = "button" id = "24" onclick = "change(this.id)" style ="left:580px; top: 580px; height: 40.6px; width: 40.6px; position: absolute;transform: rotate(40.46deg); background:red;">L24</button>
+    <button class = "button" id = "25" onclick = "change(this.id)" style ="left:612px; top: 607px; height: 40.6px; width: 40.6px; position: absolute;transform: rotate(40.46deg); background:red;">L25</button>
+    <button class = "button" id = "26" onclick = "change(this.id)" style ="left:645px; top: 634px; height: 40.6px; width: 40.6px; position: absolute;transform: rotate(40.46deg); background:red;">L26</button>
+    <button class = "button" id = "27" onclick = "change(this.id)" style ="left:677px; top: 661px; height: 40.6px; width: 40.6px; position: absolute;transform: rotate(40.46deg); background:red;">L27</button>
+    <button class = "button" id = "28" onclick = "change(this.id)" style ="left:710px; top: 687px; height: 40.6px; width: 40.6px; position: absolute;transform: rotate(40.46deg); background:red;">L28</button>
+    <button class = "button" id = "29" onclick = "change(this.id)" style ="left:619px; top: 541px; height: 71.7px; width: 89.8px; position: absolute;transform: rotate(40.46deg); background:red;">L29</button>
+    <button class = "button" id = "30" onclick = "change(this.id)" style ="left:718px; top: 647px; height: 40.46px; width: 61.67px; position: absolute;transform: rotate(40.46deg); background:red;">L30</button>
+    <img class = "img" src = "allocation_map_with_scale.png">
   </div>
 </body>
 </html>
 
 <script type="text/javascript">
-function change(id)
-{
-  document.getElementById(id).innerHTML = id + "<br/>1234";
+  function change(id)
+  {
+    i=id[2]
+    document.getElementById(i).style.background = 'green'; 
+    document.getElementById(i).innerHTML = i + "<br/>"+ document.getElementById("tb"+ i).value; 
+
+  }
+  function onButtonClick(id){
+    if (document.getElementById(id).style.background == 'red') {
+            document.getElementById('textInput'+ id).className="show";
+        }
+    else {
+            document.getElementById(id).style.background = 'red';
+            document.getElementById(id).innerHTML = id;
+        }
 }
 </script> 

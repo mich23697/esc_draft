@@ -1,8 +1,7 @@
 #box-container{ 
   position: relative;
   width: 1920px;
-  height: 1080px; 
-  border: 2px solid black; 
+  height: 1080px;  
 }
 
 .img {
@@ -11,15 +10,14 @@
 }
 
 .button {
-  background-color: #f44336; /* Red */
-  border: none;
+  background-color: #f44336; /* Red *#f44336*/
+  border: solid black;
   color: white;
   height: 64px;
   width: 64px;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-
+  font-size: 13px;
   cursor: pointer;
 }
 .button1 {
@@ -41,5 +39,12 @@
 
 .button:hover {
   background-color: #636362;
+}
+
+.hide{
+  display:none;
+}
+.show{
+  display:block;
 }
 

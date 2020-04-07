@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="testing.css">
+</head>
+<body>
+  <div id="box-container">
+    <button class = "button" id = "1" onclick = "onButtonClick(this.id)"  style ="left:697px; top:119px; height: 54px; width: 54px; position: absolute; background:red;">L1</button>
+    <div class = "hide" id="textInput1" style ="left:697px; top:109px; position: absolute;">
+      <input type="text" id="tb1" value="..."style ="width: 54px;" />
+      <button onclick="change(this.id)" id="b1">change</button>
+    </div>
+
+  </div>
+</body>
+</html>
+
+<script type="text/javascript">
+  function change(id)
+  {
+    i
+    document.getElementById(i).style.background = 'green'; 
+    document.getElementById(i).innerHTML = i + "<br/>"+ document.getElementById("tb"+ i).value; 
+
+  }
+  function onButtonClick(id){
+    if (document.getElementById(id).style.background == 'red') {
+            document.getElementById('textInput'+ id).className="show";
+        }
+    else {
+            document.getElementById(id).style.background = 'red';
+            document.getElementById(id).innerHTML = id;
+        }
+}
+</script> 
