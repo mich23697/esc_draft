@@ -8,6 +8,7 @@
     <button class = "button" id = "1" onclick = "change(this.id)"  style ="left:1200px; top:300px; position: absolute; background:red;">L1</button>
     <button class = "button" id = "2" onclick = "change(this.id)" style ="left:700px; top:700px; position: absolute; background:red;">L2</button>
     <button class = "button" id = "Algo" onclick = "getData()" style ="left:100px; top:100px; position: absolute;">Press</button>
+    <button class = "button" id = "Reset" onclick = "Reset()" style ="left:100px; top:200px; position: absolute;">Reset</button>
     <div style ="left:300px; top:400px; position: absolute; transform: rotate(20deg);">
      <button class="button1" id = "3" onclick = "change(this.id)" style ="background:red;">L3</button>
      <button class="button1" id = "4" onclick = "change(this.id)" style ="background:red;">L4</button>
@@ -25,26 +26,34 @@
   {
     if (document.getElementById(id).style.background == 'red') {
             document.getElementById(id).style.background = 'green'; 
-            document.getElementById(id).innerHTML = id + "<br/>1234" ; 
+            document.getElementById(id).innerHTML = id + "<br/>Allocated" ; 
         }
         else {
             document.getElementById(id).style.background = 'red';
-            document.getElementById(id).innerHTML = id
+            document.getElementById(id).innerHTML = id;
         }
   }
+
+  function Reset(){
+    var buttons = document.getElementsByTagName('button');
+    for(var i=0; i<buttons.length; i++){
+      buttons[i].style.background = 'red';
+      buttons[i].innerHTML = "L" + buttons[i].id;
+      document.getElementById('Algo').disabled = false; 
+    }
+  }
+
   function getData(){
     var req = new XMLHttpRequest();
     req.open("get","http://jsonplaceholder.typicode.com/");
     req.onload=function(){
       var _TheArray = [["1","2","0"],["2","1","1"],["3","4","1"]];
-      alert(_TheArray[0][2]);
-      //console.log(_TheArray[[1][3]])
-
-      //console.log(_TheArray[[1][3]]);
       for (var i=0; i<_TheArray.length; i++) {
         console.log(_TheArray[[i][2]]);
         if (_TheArray[i][2] != 0) {
           change(_TheArray[i][1]);
+          document.getElementById(_TheArray[i][1]).innerHTML = "L" + _TheArray[i][1] + "is allocated by group" + _TheArray[i][0] ;
+          document.getElementById('Algo').disabled = 'disabled'; 
         }
       }
     };
