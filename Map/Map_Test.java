@@ -1,67 +1,63 @@
-package selenium_testing;
+package SeleniumJava.SeleniumJava;
+import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BrowserTest {
-		
-	public static void main(String[] args) throws InterruptedException {		
-		//System.setProperty("webdriver.gecko.driver","C:\\Users\\simon\\Desktop\\ZZM\\selenium_testing\\drivers\\geckdriver\\geckodriver.exe");
-		//WebDriver driver = new FirefoxDriver();
+public class Browser_test {
+	static String myPassword = "SUTD@Singapore";
 
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\simon\\Desktop\\ZZM\\selenium_testing\\drivers\\chromeDriver\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+	public static void main(String[] args) throws InterruptedException {
+		
 
-		driver.get("file:///C:/Users/simon/Desktop/JavaScript/map.html");
-		//driver.get("https://istd.sutd.edu.sg/");
-		//driver.get("https://www.google.com.sg");
-		
-		// get all the links
-		java.util.List<WebElement> buttons = driver.findElements(By.tagName("button"));
-		System.out.println(buttons.size());
-				
-		// print all the links
-		for (int i = 0; i < buttons.size(); i=i+1) {
-			System.out.println(i + " " + buttons.get(i).getText());
-			System.out.println(i + " " + buttons.get(i).getAttribute("href"));
-		}
-		
-		// maximize the browser windows
-		driver.manage().window().maximize();
-		
-		// click all links in a web page
-		for(int i = 0; i < buttons.size(); i++)
+		System.setProperty("webdriver.gecko.driver","C:\\JAVA\\SeleniumJava\\drivers\\geckodriver\\geckodriver.exe");
+         WebDriver driver = new FirefoxDriver();
+
+		driver.get("file:///C:/Users/simon/Documents/GitHub/esc_draft/Map/Button_css.html");
+		String GroupId = "1234";
+		List<WebElement> Button = driver.findElements(By.className("button"));	
+		List<WebElement> textbox = driver.findElements(By.className("textbox"));	
+		List<WebElement> changebutton = driver.findElements(By.className("changebutton"));	
+		WebElement press = driver.findElement(By.id("Algo"));
+		WebElement reset = driver.findElement(By.id("Reset"));
+		System.out.println(Button);
+		//click the location button and input random 4 digit integer and click change button to update the data
+		for(int i=0;i<30;i++)
 		{
-			System.out.println("*** Navigating to" + " " + buttons.get(i).getAttribute("href"));
-			//if (links.get(i).getAttribute("href") == null || 
-			//		links.get(i).getAttribute("href").equals("https://sudiptac.bitbucket.io"))
-			if (buttons.get(i).getAttribute("href") == null)
-				continue;
-			boolean staleElementLoaded = true;
-			//the loop checks whether the elements is properly loaded
-			while(staleElementLoaded) {
-				try {
-					//navigate to this link
-					driver.navigate().to(buttons.get(i).getAttribute("href"));
-					Thread.sleep(3000);
-					//click the back button in the browser
-					driver.navigate().back();
-					buttons = driver.findElements(By.tagName("button"));
-					System.out.println("*** Navigated to" + " " + buttons.get(i).getAttribute("href"));
-					staleElementLoaded = false;
-				} catch (StaleElementReferenceException e) {
-					staleElementLoaded = true;
-				}
-			}
+			Button.get(i).click();
+			Thread.sleep(500);
+			textbox.get(i).sendKeys(randomString(4));
+			Thread.sleep(500);
+			changebutton.get(i).click();
+			Thread.sleep(500);
+		}
+		for(int i=0;i<30;i++)
+		{
+			Button.get(i).click();
+			Thread.sleep(100);
+
+		}
+		for(int i=0;i<5;i++)
+		{
+			press.click();
+			Thread.sleep(1000);
+			reset.click();
+			Thread.sleep(1000);
 		}
 	}
+	static String randomString(int len){
+	    StringBuilder s = new StringBuilder(len);
+	    final String strings = "0123456789";
+	    Random r = new Random();
+	    for( int i = 0; i < len; i++ ) 
+	       s.append( strings.charAt( r.nextInt(strings.length()) ) );
+	    return s.toString();
+	 }
+	
 }
-
