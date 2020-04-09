@@ -26,11 +26,11 @@
   {
     if (document.getElementById(id).style.background == 'red') {
             document.getElementById(id).style.background = 'green'; 
-            document.getElementById(id).innerHTML = id + "<br/>Allocated" ; 
+            //document.getElementById(id).innerHTML = "L" + id + "<br/>Allocated" ; 
         }
         else {
             document.getElementById(id).style.background = 'red';
-            document.getElementById(id).innerHTML = id;
+            //document.getElementById(id).innerHTML = "L" + id;
         }
   }
 
@@ -38,7 +38,9 @@
     var buttons = document.getElementsByTagName('button');
     for(var i=0; i<buttons.length; i++){
       buttons[i].style.background = 'red';
+      if((buttons[i].id != "Algo") && (buttons[i].id != "Reset")){
       buttons[i].innerHTML = "L" + buttons[i].id;
+    }
       document.getElementById('Algo').disabled = false; 
     }
   }
@@ -47,12 +49,13 @@
     var req = new XMLHttpRequest();
     req.open("get","http://jsonplaceholder.typicode.com/");
     req.onload=function(){
+      //alert(1);
       var _TheArray = [["1","2","0"],["2","1","1"],["3","4","1"]];
-      for (var i=0; i<_TheArray.length; i++) {
-        console.log(_TheArray[[i][2]]);
+      for (var i=0; i<_TheArray.length; i++){
+        //console.log(_TheArray[[i][2]]);
         if (_TheArray[i][2] != 0) {
           change(_TheArray[i][1]);
-          document.getElementById(_TheArray[i][1]).innerHTML = "L" + _TheArray[i][1] + "is allocated by group" + _TheArray[i][0] ;
+          document.getElementById(_TheArray[i][1]).innerHTML = "L" + _TheArray[i][1] + " is allocated by group" + _TheArray[i][0] ;
           document.getElementById('Algo').disabled = 'disabled'; 
         }
       }
