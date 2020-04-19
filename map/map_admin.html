@@ -158,7 +158,7 @@
       <input type="text" id="tb30" value=""style ="width: 54px;" class = "textbox"/>
       <button onclick="change(this.id)" id="b30" class = "changebutton">change</button>
     </div>
-    <img class = "img" src = "allocation_map_with_scale.png">
+    <img class = "img" src = "map_base.png">
   </div>
 </body>
 </html>
@@ -184,7 +184,6 @@
           for(i=1;i<31;i++){
             document.getElementById('textInput'+ i).className="hide";
             document.getElementById("tb"+ i).value ="";
-
           }
           document.getElementById('textInput'+ id).className="show";
         }
@@ -204,7 +203,6 @@
             //document.getElementById(id).innerHTML = "L" + id;
         }
   }
-
   function Reset(){
     var buttons = document.getElementsByClassName('button');
     for(var i=0; i<buttons.length; i++){
@@ -217,6 +215,10 @@
   }
 
   function getData(){
+    for(i=1;i<31;i++){
+       document.getElementById('textInput'+ i).className="hide";
+       document.getElementById("tb"+ i).value ="";
+     }
     var req = new XMLHttpRequest();
     req.open("get","http://jsonplaceholder.typicode.com/");
     req.onload=function(){
