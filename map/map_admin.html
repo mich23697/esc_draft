@@ -166,19 +166,27 @@
 <script type="text/javascript">
   function change(id)
   {
-    if(id.length>=3){
-          i=id[1]+id[2]
-    }
-    else{
-      i=id[1]
-    }
+    var txt;
+    var r = confirm("confirm the change?");
+    if (r == true) {
+      if(id.length>=3){
+        i=id[1]+id[2]
+      }
+      else{
+        i=id[1]
+       }
 
-    document.getElementById(i).style.background = 'green'; 
-    document.getElementById(i).innerHTML = "L"+ i + "<br/>"+ document.getElementById("tb"+ i).value;
-    document.getElementById('textInput'+ i).className="hide"; 
-    document.getElementById("tb"+ i).value ="";
+      document.getElementById(i).style.background = 'green'; 
+      document.getElementById(i).innerHTML = "L"+ i + "<br/>"+ document.getElementById("tb"+ i).value;
+      document.getElementById('textInput'+ i).className="hide"; 
+      document.getElementById("tb"+ i).value ="";
+    
+    } 
+    else {
+    }
 
   }
+
   function onButtonClick(id){
     if (document.getElementById(id).style.background == 'red') {
           for(i=1;i<31;i++){
