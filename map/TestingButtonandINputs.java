@@ -53,6 +53,35 @@ public class TestingButtonandINputs {
 			reset.click();
 			Thread.sleep(1000);
 		}
+		
+		for(int i=0;i<5;i++)
+		{
+			press.click();
+			Thread.sleep(1000);
+			reset.click();
+			Thread.sleep(1000);
+		}
+		
+		for(int a=0;a<20;a++){
+			
+			for(int i=0;i<30;i++)
+			{
+				Button.get(i).click();
+				Thread.sleep(500);
+				textbox.get(i).sendKeys(randomString(6));
+				Thread.sleep(500);
+				changebutton.get(i).click();
+				Thread.sleep(500);
+			}
+
+			for(int b=0;b<30;b++)
+			{
+				Button.get(b).click();
+				Thread.sleep(100);
+			}
+		}
+		
+
 	}
 	static String randomString(int len){
 	    StringBuilder s = new StringBuilder(len);
