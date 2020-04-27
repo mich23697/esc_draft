@@ -67,11 +67,11 @@ public class TestingButtonandINputs {
 			for(int i=0;i<30;i++)
 			{
 				Button.get(i).click();
-				Thread.sleep(500);
-				textbox.get(i).sendKeys(randomString(6));
-				Thread.sleep(500);
+				Thread.sleep(250);
+				textbox.get(i).sendKeys(randomString(4));
+				Thread.sleep(250);
 				changebutton.get(i).click();
-				Thread.sleep(500);
+				Thread.sleep(250);
 			}
 
 			for(int b=0;b<30;b++)
