@@ -21,8 +21,8 @@
   cursor: pointer;
 }
 .button1 {
-  background-color: #f44336; /* Red */
-  border: none;
+  background-color: #228B22; /* Red */
+  border: solid black;
   color: white;
   height: 64px;
   width: 64px;
@@ -33,9 +33,6 @@
   float: left;
 }
 
-.button1:not(:last-child) {
-  border-right: none; /* Prevent double borders */
-}
 
 .button:hover {
   background-color: #636362;

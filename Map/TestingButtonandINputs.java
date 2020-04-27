@@ -1,4 +1,5 @@
-package SeleniumJava.SeleniumJava;
+package firstPackage;
+
 import java.util.List;
 import java.util.Random;
 
@@ -8,18 +9,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Browser_test {
+public class TestingButtonandINputs {
 	static String myPassword = "SUTD@Singapore";
 
 	public static void main(String[] args) throws InterruptedException {
 		
 
-		System.setProperty("webdriver.gecko.driver","C:\\JAVA\\SeleniumJava\\drivers\\geckodriver\\geckodriver.exe");
-         WebDriver driver = new FirefoxDriver();
-
-		driver.get("file:///C:/Users/simon/Documents/GitHub/esc_draft/Map/Button_css.html");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\balex\\Desktop\\selenium-java-3.141.59\\chromedriver.exe");
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("disable-infobars");
+		
+		WebDriver driver = new ChromeDriver(options);
+		driver.get("file:///C:/Users/balex/Documents/GitHub/esc_draft/map/button%20testing.html");
 		String GroupId = "1234";
 		List<WebElement> Button = driver.findElements(By.className("button"));	
 		List<WebElement> textbox = driver.findElements(By.className("textbox"));	
@@ -50,6 +53,35 @@ public class Browser_test {
 			reset.click();
 			Thread.sleep(1000);
 		}
+		
+		for(int i=0;i<5;i++)
+		{
+			press.click();
+			Thread.sleep(1000);
+			reset.click();
+			Thread.sleep(1000);
+		}
+		
+		for(int a=0;a<20;a++){
+			
+			for(int i=0;i<30;i++)
+			{
+				Button.get(i).click();
+				Thread.sleep(250);
+				textbox.get(i).sendKeys(randomString(4));
+				Thread.sleep(250);
+				changebutton.get(i).click();
+				Thread.sleep(250);
+			}
+
+			for(int b=0;b<30;b++)
+			{
+				Button.get(b).click();
+				Thread.sleep(100);
+			}
+		}
+		
+
 	}
 	static String randomString(int len){
 	    StringBuilder s = new StringBuilder(len);
@@ -61,3 +93,4 @@ public class Browser_test {
 	 }
 	
 }
+ 	
